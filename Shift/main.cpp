@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 
@@ -11,7 +11,7 @@ void main()
 #ifdef shift
 	const int  n = 10;
 	int kolichestvo_sdvigov;
-	cout << "Ââåäèòå êîëè÷åñòâî ñäâèãîâ: "; cin >> kolichestvo_sdvigov;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ´Ð²Ð¸Ð³Ð¾Ð²: "; cin >> kolichestvo_sdvigov;
 	int arr[n] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	int zero;
 	for (int j = 0; j <	kolichestvo_sdvigov; j++)
