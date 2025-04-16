@@ -1,4 +1,4 @@
-#include<Windows.h>
+ï»¿#include<Windows.h>
 #include<iostream>
 using namespace std;
 
@@ -14,7 +14,7 @@ void main()
 #ifdef massive
 	const int n = 5;
 	int arr[n];
-	cout << "Ââåäèòå ýëåìåíòû ìàññèâà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
 	for (int i = 0; i < n; i++)
 	{
 		cin >> arr[i];
@@ -34,8 +34,8 @@ void main()
 	{
 		sum += arr[i];
 	}
-	cout << "Ñóììà ýëåìåíòîâ ìàññèâà: " << sum << endl;
-	cout << "Ñðåäíåå-àðèôìåòè÷åñêîå ýëåìåíòîâ ìàññèâà: " << (double)sum / n << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << sum << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ-Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << (double)sum / n << endl;
 
 	int min = arr[0];
 	int max = arr[0];
@@ -44,8 +44,8 @@ void main()
 		if (arr[i] < min) min = arr[i];
 		if (arr[i] > max) max = arr[i];
 	}
-	cout << "Ìèíèìàëüíîå çíà÷åíèå â ìàññèâå: " << min << endl;
-	cout << "Ìàêñèìàëüíîå çíà÷åíèå â ìàññèâå: " << max << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ: " << min << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ: " << max << endl;
 }
 #endif
 
@@ -54,7 +54,7 @@ void main()
 
 	const int  n = 10;
 	int arr[n] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	// Âûâîä èñõîäíîãî ìàññèâà
+	// Ð’Ñ‹Ð²Ð¾Ð´ Ð¸ÑÑ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð°
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << tab;
@@ -62,10 +62,10 @@ void main()
 	cout << endl;
 
 	int number_of_shifts;
-	cout << "Ââåäèòå êîëè÷åñòâî ñäâèãîâ: "; cin >> number_of_shifts;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ´Ð²Ð¸Ð³Ð¾Ð²: "; cin >> number_of_shifts;
 	for (int i = 0; i < number_of_shifts; i++)
 	{
-		//öèêëè÷åñêèé ñäâèã ìàññèâà
+		//Ñ†Ð¸ÐºÐ»Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ ÑÐ´Ð²Ð¸Ð³ Ð¼Ð°ÑÑÐ¸Ð²Ð°
 		int buffer = arr[0];
 		for (int i = 1; i < n; i++)
 		{
@@ -74,7 +74,7 @@ void main()
 		arr[n - 1] = buffer;
 		Sleep(500);
 		system("CLS");
-		// Âûâîä ñäâèíóòîãî ìàññèâà
+		// Ð’Ñ‹Ð²Ð¾Ð´ ÑÐ´Ð²Ð¸Ð½ÑƒÑ‚Ð¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð°
 		for (int i = 0; i < n; i++)
 		{
 			cout << arr[i] << tab;
