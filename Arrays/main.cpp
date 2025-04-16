@@ -8,16 +8,15 @@ void main()
 {
 	setlocale(LC_ALL, "");
 
-	/*const int  n = 5; // элементы массива
-	int arr[n] = { 3, 5, 8}; // инициализированый массив
+	const int  n = 5; // элементы массива
+	int arr[n] = { 3, 5, 8 }; // инициализированый массив
 	arr[1] = 1024; // второй элемент массива
 	cout << arr[1] << endl;
 	for (int i = 0; i < n; i++)
 	{
-		cout << arr[i] << "\t";
+		arr[i] = rand() % (100 - 50) + 50;
+		//arr[i] = 50 + rand() % (100-50);
 	}
-	cout << endl;*/
-
 
 #ifdef massive
 
@@ -60,5 +59,7 @@ void main()
 	cout << "минимальное значение массива - " << min << endl;
 	cout << "максимальное значение массива - " << max << endl;
 #endif
+
+
 }
 
