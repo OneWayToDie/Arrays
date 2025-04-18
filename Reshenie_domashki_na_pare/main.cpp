@@ -2,8 +2,8 @@
 #include<iostream>
 using namespace std;
 
-#define massive
-//#define tab "\t"
+//#define massive
+#define tab "\t"
 
 void main()
 {
