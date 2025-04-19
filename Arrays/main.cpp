@@ -2,12 +2,13 @@
 using namespace std;
 
 //#define massive
-
+#define random
+//#define algoritm_sortirovki
 
 void main()
 {
 	setlocale(LC_ALL, "");
-
+#ifdef random
 	const int  n = 5; // элементы массива
 	int arr[n] = { 3, 5, 8 }; // инициализированый массив
 	arr[1] = 1024; // второй элемент массива
@@ -17,6 +18,51 @@ void main()
 		arr[i] = rand() % (100 - 50) + 50;
 		//arr[i] = 50 + rand() % (100-50);
 	}
+	int minRand, maxRand;
+	do {
+		cout << "Введите минимальное случайное число: "; cin >> minRand;
+		cout << "Введите максимальное случайное число: "; cin >> maxRand;
+		if (minRand > maxRand)cout << "Минимальное должно быть меньше максимального" << endl;
+		if (minRand == maxRand)cout << "Числа должны быть разные" << endl;
+	} while (minRand >= maxRand);
+	/*if (maxRand < minRand)
+	{
+		int buffer = minRand;
+		minRand = maxRand;
+		maxRand = buffer;
+	}*/
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % (maxRand - minRand) + minRand;
+	}
+
+	for (int i = 0; i < n; i++) // счётчик i выбирает элемент, в который нужно поместить
+	{
+		for (int j = i + 1; j < n; j++) // счётчик j перебирает элементы в поисках минимального значения
+		{
+			//arr[i] - выбранный элемент
+			// arr[j] - перебираемый элемент
+			if (arr[j] < arr[i])
+			{
+				int buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+#endif
+
 
 #ifdef massive
 
@@ -58,6 +104,30 @@ void main()
 	cout << "среднее арифметическое - " << sum / n << endl;
 	cout << "минимальное значение массива - " << min << endl;
 	cout << "максимальное значение массива - " << max << endl;
+#endif
+
+#ifdef algoritm_sortirovki
+	
+
+	for (int i = 0; i < n; i++) // счётчик i выбирает элемент, в который нужно поместить
+	{
+		for (int j = i + 1; j < n; j++) // счётчик j перебирает элементы в поисках минимального значения
+		{
+			//arr[i] - выбранный элемент
+			// arr[j] - перебираемый элемент
+			if (arr[j] < arr[i])
+			{
+				int buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
 #endif
 
 

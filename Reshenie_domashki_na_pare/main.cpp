@@ -3,7 +3,8 @@
 using namespace std;
 
 //#define massive
-#define tab "\t"
+//#define tab "\t"
+
 
 void main()
 {
