@@ -3,11 +3,18 @@
 using namespace std;
 
 
+//#define primer
+//#define TwoD_Arrays_One
+//#define TwoD_Arrays_random
+
+
 void main()
 {
 	setlocale(LC_ALL, "");
+
+#ifdef primer
 	cout << "2Darrays" << endl;
-	const int ROWS = 5;
+	const int ROWS = 3;
 	const int COLS = 4;
 	int arr[ROWS][COLS] =
 	{
@@ -23,4 +30,97 @@ void main()
 		}
 		cout << endl;
 	}
+#endif
+
+#ifdef TwoD_Arrays_One
+
+	const int Rows = 3;
+	const int Cols = 4;
+	int sum = 0;
+	int min = 0;
+	int max = 0;
+	int array[Rows][Cols]; cout << "Введите значения двумерного массива: ";
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			cin >> array[i][j]; // Цикл для ввода двумерного масива
+		}
+	}
+	min = array[0][0];
+	max = array[0][0];
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			sum = sum + array[i][j]; // Цикл для нахождения суммы
+			if (array[i][j] < min)
+			{
+				min = array[i][j]; // минималОЧКА
+			}
+			if (array[i][j] > max)
+			{
+				max = array[i][j]; // максималОЧКА
+			}
+		}
+	}
+	cout << "сумма элементов двумерного массива - " << sum << "\n";
+	cout << "Среднее арифметическое двумерного массива - " << (double)sum / (Rows * Cols) << "\n";
+	cout << "минимальное значение двумерного массива - " << min << endl;
+	cout << "максимальное значение двумерного массива - " << max << endl;
+
+#endif
+
+#ifdef TwoD_Arrays_random
+	const int Rows = 3;
+	const int Cols = 4;
+	int sum = 0;
+	int min = 0;
+	int max = 0;
+	int array[Rows][Cols];
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			array[i][j] = rand() % 100; // генерация рандомных чисел
+		}
+	}
+
+	cout << "Вывод двумерного массива - ";
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			cout << array[i][j] << " "; // вывод на консоль сгенерированых чисел
+		}
+		cout << "\n";
+	}
+
+	//Все заданные действия со сгенерированными числами
+	cout << "\n";
+	min = array[0][0];
+	max = array[0][0];
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			sum = sum + array[i][j]; 
+			if (array[i][j] < min)
+			{
+				min = array[i][j];
+			}
+			if (array[i][j] > max)
+			{
+				max = array[i][j];
+			}
+		}
+	}
+	cout << "сумма элементов двумерного массива - " << sum << "\n";
+	cout << "Среднее арифметическое двумерного массива - " << (double)sum / (Rows * Cols) << "\n";
+	cout << "минимальное значение двумерного массива - " << min << endl;
+	cout << "максимальное значение двумерного массива - " << max << endl;
+#endif
 }

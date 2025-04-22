@@ -6,6 +6,8 @@ using namespace std;
 //#define shift
 //#define shift_vpravo
 //#define shift_debila // инверсия........... ne sprashivaite zachem, sam ne znayou
+//#define shift_dvumerki_vlevo
+#define shift_dvumerki_vpravo
 
 void main()
 {
@@ -25,12 +27,12 @@ void main()
 			i + 1 < n ? arr[i] = arr[i + 1] : arr[i] = zero;
 		}
 	}
-		for (int i = 0; i < n; i++)
-		{
-			cout << arr[i] << "\t";
-		}
-		cout << "\n";
-	
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << "\n";
+
 #endif
 
 #ifdef shift_vpravo
@@ -67,7 +69,7 @@ void main()
 	int arr[n] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	int zero;
 
-	for (int i = n-1; i >= 0; i--)
+	for (int i = n - 1; i >= 0; i--)
 	{
 		cout << arr[i] << "\t";
 	}
@@ -80,13 +82,112 @@ void main()
 			i + 1 < n ? arr[i] = arr[i + 1] : arr[i] = zero;
 		}
 	}
-	for (int i = n-1; i >= 0; i--)
+	for (int i = n - 1; i >= 0; i--)
 	{
 		cout << arr[i] << "\t";
 	}
 	cout << "\n";
-	
+#endif
 
-	/*for (int i = n - 1; i >= 0; i--)*/
+#ifdef shift_dvumerki_vlevo
+
+	const int Rows = 3;
+	const int Cols = 3;
+	int kolichestvo_sdvigov; cout << "Введите количество сдвигов: "; cin >> kolichestvo_sdvigov;
+	int array[Rows][Cols] =
+	{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	};
+	int tochka_sdviga;
+	const int odnomerka = Rows * Cols;
+	int perevod[odnomerka];
+	int index_massiva = 0;
+	
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			perevod[index_massiva] = array[i][j]; // переводим двумерный массив в одномерный
+			index_massiva++;
+		}
+	}
+	for (int j = 0; j < kolichestvo_sdvigov; j++)
+	{
+		tochka_sdviga = perevod[0];
+		for (int i = 0; i < Rows*Cols; i++)
+		{
+			i + 1 < Rows*Cols ? perevod[i] = perevod[i + 1] : perevod[i] = tochka_sdviga; // делаем сдвиг влево
+		}
+	}
+	index_massiva = 0;
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			array[i][j] = perevod[index_massiva]; // переводим массив обратно в двумерный
+			index_massiva++;
+		}
+	}
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			cout << array[i][j] << "\t"; // выводим массив
+		}
+		cout << "\n";
+	}
+#endif
+
+#ifdef shift_dvumerki_vpravo
+	const int Rows = 3;
+	const int Cols = 3;
+	int kolichestvo_sdvigov; cout << "Введите количество сдвигов: "; cin >> kolichestvo_sdvigov;
+	int array[Rows][Cols] =
+	{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	};
+	int tochka_sdviga;
+	const int odnomerka = Rows * Cols;
+	int perevod[odnomerka];
+	int index_massiva = 0;
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			perevod[index_massiva] = array[i][j]; // переводим двумерный массив в одномерный
+			index_massiva++;
+		}
+	}
+	for (int j = 0; j < kolichestvo_sdvigov; j++)
+	{
+		tochka_sdviga = perevod[odnomerka - 1];
+		for (int i = odnomerka - 1; i >= 0; i--)
+		{
+			i - 1 >= 0 && i < odnomerka ? perevod[i] = perevod[i - 1] : perevod[i] = tochka_sdviga; // сдвигаем одномерный массив вправо
+		}
+	}
+	index_massiva = 0;
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			array[i][j] = perevod[index_massiva]; // переводим массив обратно в двумерный
+			index_massiva++;
+		}
+	}
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			cout << array[i][j] << "\t"; // выводим массив
+		}
+		cout << "\n";
+	}
 #endif
 }
+
