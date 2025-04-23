@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <windows.h>
 
 
@@ -24,15 +24,15 @@ void main()
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			perevod[index_massiva] = array[i][j]; // ïåðåâîäèì äâóìåðíûé ìàññèâ â îäíîìåðíûé
+			perevod[index_massiva] = array[i][j]; // Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð¸Ð¼ Ð´Ð²ÑƒÐ¼ÐµÑ€Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð² Ð² Ð¾Ð´Ð½Ð¾Ð¼ÐµÑ€Ð½Ñ‹Ð¹
 			index_massiva++;
 		}
 	}
-	cout << "Ðàíäîìíûé ìàññèâ: " << "\n";
+	cout << "Ð Ð°Ð½Ð´Ð¾Ð¼Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: " << "\n";
 	for (int i = 0; i < Rows*Cols; i++)
 	{
 		proverka = rand() % 16+1;
-		for (int j = 0; j < Rows*Cols; j++)				// Öèêë äëÿ çàäà÷è óñëîâèé óíèêàëüíîñòè
+		for (int j = 0; j < Rows*Cols; j++)				// Ð¦Ð¸ÐºÐ» Ð´Ð»Ñ Ð·Ð°Ð´Ð°Ñ‡Ð¸ ÑƒÑÐ»Ð¾Ð²Ð¸Ð¹ ÑƒÐ½Ð¸ÐºÐ°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸
 		{
 			if (perevod[j] == proverka)
 			{
@@ -55,7 +55,7 @@ void main()
 		{
 			if (perevod[j] < perevod[i])
 			{
-				int buffer = perevod[i]; // ñìåíà ìåñò
+				int buffer = perevod[i]; // ÑÐ¼ÐµÐ½Ð° Ð¼ÐµÑÑ‚
 				perevod[i] = perevod[j];
 				perevod[j] = buffer;
 			}
@@ -66,7 +66,7 @@ void main()
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			array[i][j] = perevod[index_massiva]; // ïåðåâîäèì ìàññèâ îáðàòíî â äâóìåðíûé
+			array[i][j] = perevod[index_massiva]; // Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð¸Ð¼ Ð¼Ð°ÑÑÐ¸Ð² Ð¾Ð±Ñ€Ð°Ñ‚Ð½Ð¾ Ð² Ð´Ð²ÑƒÐ¼ÐµÑ€Ð½Ñ‹Ð¹
 			index_massiva++;
 		}
 	}
@@ -74,7 +74,7 @@ void main()
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			cout << array[i][j] << "\t"; // âûâîäèì ìàññèâ
+			cout << array[i][j] << "\t"; // Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ð¼ Ð¼Ð°ÑÑÐ¸Ð²
 		}
 		cout << "\n";
 	}

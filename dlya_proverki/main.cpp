@@ -613,7 +613,7 @@ void main()
 	for (int i = 0; i < Rows * Cols; i++)
 	{
 		proverka = rand() % 16 + 1;
-		for (int j = 0; j < Rows * Cols; j++)
+		for (int j = 0; j < Rows * Cols; j++) // Цикл для задачи условий уникальности
 		{
 			if (perevod[j] == proverka)
 			{
