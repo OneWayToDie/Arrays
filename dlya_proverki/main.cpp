@@ -12,6 +12,7 @@ using namespace std;
 //#define TwoD_Arrays_random
 //#define shift_dvumerki_vlevo
 //#define shift_dvumerki_vpravo
+#define TwoD_Arrays_sortirovka
 
 void main()
 {
@@ -398,6 +399,58 @@ void main()
 		for (int i = odnomerka - 1; i >= 0; i--)
 		{
 			i - 1 >= 0 && i < odnomerka ? perevod[i] = perevod[i - 1] : perevod[i] = tochka_sdviga; // сдвигаем одномерный массив вправо
+		}
+	}
+	index_massiva = 0;
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			array[i][j] = perevod[index_massiva]; // переводим массив обратно в двумерный
+			index_massiva++;
+		}
+	}
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			cout << array[i][j] << "\t"; // выводим массив
+		}
+		cout << "\n";
+	}
+#endif
+
+#ifdef TwoD_Arrays_sortirovka
+
+	const int Rows = 3;
+	const int Cols = 3;
+	int array[Rows][Cols] =
+	{
+		{3, 8, 3},
+		{4, 6, 6},
+		{7, 4, 9},
+	};
+	const int odnomerka = Rows * Cols;
+	int perevod[odnomerka];
+	int index_massiva = 0;
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			perevod[index_massiva] = array[i][j]; // перевод в одномерный
+			index_massiva++;
+		}
+	}
+	for (int i = 0; i < Rows * Cols; i++) // счётчик i выбирает элемент, в который нужно поместить
+	{
+		for (int j = i + 1; j < Rows * Cols; j++) // счётчик j перебирает элементы в поисках минимального значения
+		{
+			if (perevod[j] < perevod[i])
+			{
+				int buffer = perevod[i]; // смена мест
+				perevod[i] = perevod[j];
+				perevod[j] = buffer;
+			}
 		}
 	}
 	index_massiva = 0;
