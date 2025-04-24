@@ -15,7 +15,7 @@ using namespace std;
 //#define TwoD_Arrays_sortirovka_dano
 //#define TwoD_Arrays_sortirovka_random
 //#define TwoD_Arrays_sortirovka_dannie_polzovatelya
-#define unique_2
+//#define unique_2
 
 void main()
 {
@@ -103,6 +103,8 @@ void main()
 			cout << stroka[i];
 		}
 		/*cout << stroka;*/
+
+		//cout << hex << number << endl; // hex - манипулятор для перевода 10-ной системы в 16-ную
 	}
 	else
 	{
@@ -278,21 +280,13 @@ void main()
 	int max = 0;
 	int array[Rows][Cols];
 
+	cout << "Вывод двумерного массива - ";
 	for (int i = 0; i < Rows; i++)
 	{
 		for (int j = 0; j < Cols; j++)
 		{
 			array[i][j] = rand() % 100; // генерация рандомных чисел
-		}
-	}
-
-	cout << "Вывод двумерного массива: " << "\n";
-
-	for (int i = 0; i < Rows; i++)
-	{
-		for (int j = 0; j < Cols; j++)
-		{
-			cout << array[i][j] << " "; // вывод на консоль сгенерированых чисел
+			cout << array[i][j] << " ";
 		}
 		cout << "\n";
 	}
@@ -321,6 +315,7 @@ void main()
 	cout << "минимальное значение двумерного массива - " << min << endl;
 	cout << "максимальное значение двумерного массива - " << max << endl;
 #endif
+
 
 #ifdef shift_dvumerki_vlevo
 

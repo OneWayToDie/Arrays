@@ -8,7 +8,7 @@ using namespace std;
 //#define TwoD_Arrays_random
 //#define TwoD_Arrays_sortirovka_dano
 //#define TwoD_Arrays_sortirovka_random
-#define TwoD_Arrays_sortirovka_dannie_polzovatelya
+//#define TwoD_Arrays_sortirovka_dannie_polzovatelya
 
 void main()
 {
@@ -82,23 +82,14 @@ void main()
 	int max = 0;
 	int array[Rows][Cols];
 
+	cout << "Вывод двумерного массива - ";
 	for (int i = 0; i < Rows; i++)
 	{
 		for (int j = 0; j < Cols; j++)
 		{
 			array[i][j] = rand() % 100; // генерация рандомных чисел
+			cout << array[i][j] << " ";
 		}
-	}
-
-	cout << "Вывод двумерного массива - ";
-
-	for (int i = 0; i < Rows; i++)
-	{
-		for (int j = 0; j < Cols; j++)
-		{
-			cout << array[i][j] << " "; // вывод на консоль сгенерированых чисел
-		}
-		cout << "\n";
 	}
 
 	//Все заданные действия со сгенерированными числами
@@ -195,7 +186,7 @@ void main()
 		for (int j = 0; j < Cols;j++)
 		{
 			array[i][j] = rand() % 100;
-				cout << array[i][j] << "\t";
+			cout << array[i][j] << "\t";
 		}
 		cout << "\n";
 	}

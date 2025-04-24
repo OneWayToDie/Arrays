@@ -64,6 +64,8 @@ void main()
 			cout << stroka[i];
 		}
 		/*cout << stroka;*/
+
+		//cout << hex << number << endl; // hex - манипулятор для перевода 10-ной системы в 16-ную
 	}
 	else
 	{
