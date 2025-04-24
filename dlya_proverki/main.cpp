@@ -16,7 +16,7 @@ using namespace std;
 //#define TwoD_Arrays_sortirovka_random
 //#define TwoD_Arrays_sortirovka_dannie_polzovatelya
 //#define unique_2
-//#define repeats_TwoD
+#define repeats_TwoD
 
 void main()
 {
@@ -90,12 +90,12 @@ void main()
 			{
 				switch (delenie)
 				{
-				case 10: stroka = stroka + "A"; break;
-				case 11: stroka = stroka + "B"; break;
-				case 12: stroka = stroka + "C"; break;
-				case 13: stroka = stroka + "D"; break;
-				case 14: stroka = stroka + "E"; break;
-				case 15: stroka = stroka + "F"; break;
+					case 10: stroka = stroka + "A"; break;
+					case 11: stroka = stroka + "B"; break;
+					case 12: stroka = stroka + "C"; break;
+					case 13: stroka = stroka + "D"; break;
+					case 14: stroka = stroka + "E"; break;
+					case 15: stroka = stroka + "F"; break;
 				}
 			}
 		}
@@ -669,7 +669,6 @@ void main()
 	int perevod[odnomerka];
 	int index_massiva = 0;
 	////////////// переменные для пересчёта рандомных чисел
-	int shet_zero = 0;
 	int shet_one = 0;
 	int shet_two = 0;
 	int shet_three = 0;
@@ -736,11 +735,6 @@ void main()
 	{
 		for (int j = i + 1; j < 16; j++)
 		{
-			if (perevod[j] == perevod[i] && perevod[i] == 0)
-			{
-				shet_zero++;
-				perevod[i] = 0;
-			}
 			if (perevod[i] == perevod[j] && perevod[i] == 1)
 			{
 				shet_one++;
@@ -823,7 +817,6 @@ void main()
 			}
 		}
 	}
-	cout << "количество повторений 0 - " << shet_zero << "\n";
 	cout << "количество повторений 1 - " << shet_one << "\n";
 	cout << "количество повторений 2 - " << shet_two << "\n";
 	cout << "количество повторений 3 - " << shet_three << "\n";

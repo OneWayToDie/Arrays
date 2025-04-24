@@ -18,7 +18,6 @@ void main()
 	int perevod[odnomerka];
 	int index_massiva = 0;
 	////////////// переменные для пересчёта рандомных чисел
-	int shet_zero = 0;
 	int shet_one = 0;
 	int shet_two = 0;
 	int shet_three = 0;
@@ -80,24 +79,19 @@ void main()
 		}
 		cout << "\n";
 	}
-	
+
 	for (int i = 0; i < 16; i++)
 	{
 		for (int j = i + 1; j < 16; j++)
 		{
-			if (perevod[j] == perevod[i] && perevod[i] == 0)
-			{
-				shet_zero++; 
-				perevod[i] = 0;
-			}
 			if (perevod[i] == perevod[j] && perevod[i] == 1)
 			{
-				shet_one++;	
-				perevod[i] = 0; 
+				shet_one++;
+				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 2)
 			{
-				shet_two++;	
+				shet_two++;
 				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 3)
@@ -108,11 +102,11 @@ void main()
 			if (perevod[i] == perevod[j] && perevod[i] == 4)
 			{
 				shet_four++;
-				perevod[i] = 0; 
+				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 5)
 			{
-				shet_five++;	
+				shet_five++;
 				perevod[i] = 0;
 			}
 			if (perevod[j] == perevod[i] && perevod[i] == 6)
@@ -122,7 +116,7 @@ void main()
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 7)
 			{
-				shet_seven++;		
+				shet_seven++;
 				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 8)
@@ -133,11 +127,11 @@ void main()
 			if (perevod[i] == perevod[j] && perevod[i] == 9)
 			{
 				shet_nine++;
-				perevod[i] = 0; 
+				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 10)
 			{
-				shet_ten++;	
+				shet_ten++;
 				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 11)
@@ -147,13 +141,13 @@ void main()
 			}
 			if (perevod[j] == perevod[i] && perevod[i] == 12)
 			{
-				shet_twelve++; 
-				perevod[i] = 0; 
+				shet_twelve++;
+				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 13)
 			{
 				shet_thirteen++;
-				perevod[i] = 0; 
+				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 14)
 			{
@@ -162,7 +156,7 @@ void main()
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 15)
 			{
-				shet_fifteen++;	
+				shet_fifteen++;
 				perevod[i] = 0;
 			}
 			if (perevod[i] == perevod[j] && perevod[i] == 16)
@@ -172,7 +166,6 @@ void main()
 			}
 		}
 	}
-	cout << "количество повторений 0 - " << shet_zero << "\n";
 	cout << "количество повторений 1 - " << shet_one << "\n";
 	cout << "количество повторений 2 - " << shet_two << "\n";
 	cout << "количество повторений 3 - " << shet_three << "\n";
