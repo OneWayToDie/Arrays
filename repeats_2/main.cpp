@@ -1,8 +1,10 @@
-#include <iostream>
+п»ї#include <iostream>
 
 using namespace std;
 
-#define repeats_TwoD
+//#define repeats_TwoD
+#define repeats_4loop
+
 
 void main()
 {
@@ -17,7 +19,7 @@ void main()
 	const int odnomerka = Rows * Cols;
 	int perevod[odnomerka];
 	int index_massiva = 0;
-	////////////// переменные для пересчёта рандомных чисел
+	////////////// РїРµСЂРµРјРµРЅРЅС‹Рµ РґР»СЏ РїРµСЂРµСЃС‡С‘С‚Р° СЂР°РЅРґРѕРјРЅС‹С… С‡РёСЃРµР»
 	int shet_one = 0;
 	int shet_two = 0;
 	int shet_three = 0;
@@ -38,14 +40,14 @@ void main()
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			array[i][j] = rand() % 16 + 1; // генерация
+			array[i][j] = rand() % 16 + 1; // РіРµРЅРµСЂР°С†РёСЏ
 		}
 	}
 	for (int i = 0; i < Rows; i++)
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			perevod[index_massiva] = array[i][j]; // перевод в одномерный массив
+			perevod[index_massiva] = array[i][j]; // РїРµСЂРµРІРѕРґ РІ РѕРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ
 			index_massiva++;
 		}
 	}
@@ -55,7 +57,7 @@ void main()
 		{
 			if (perevod[j] < perevod[i])
 			{
-				int buffer = perevod[i]; // смена мест
+				int buffer = perevod[i]; // СЃРјРµРЅР° РјРµСЃС‚
 				perevod[i] = perevod[j];
 				perevod[j] = buffer;
 			}
@@ -66,16 +68,16 @@ void main()
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			array[i][j] = perevod[index_massiva]; // переводим массив обратно в двумерный
+			array[i][j] = perevod[index_massiva]; // РїРµСЂРµРІРѕРґРёРј РјР°СЃСЃРёРІ РѕР±СЂР°С‚РЅРѕ РІ РґРІСѓРјРµСЂРЅС‹Р№
 			index_massiva++;
 		}
 	}
-	cout << "Случайный массив: " << "\n";
+	cout << "РЎР»СѓС‡Р°Р№РЅС‹Р№ РјР°СЃСЃРёРІ: " << "\n";
 	for (int i = 0; i < Rows; i++)
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			cout << array[i][j] << "\t"; // выводим массив
+			cout << array[i][j] << "\t"; // РІС‹РІРѕРґРёРј РјР°СЃСЃРёРІ
 		}
 		cout << "\n";
 	}
@@ -166,21 +168,105 @@ void main()
 			}
 		}
 	}
-	cout << "количество повторений 1 - " << shet_one << "\n";
-	cout << "количество повторений 2 - " << shet_two << "\n";
-	cout << "количество повторений 3 - " << shet_three << "\n";
-	cout << "количество повторений 4 - " << shet_four << "\n";
-	cout << "количество повторений 5 - " << shet_five << "\n";
-	cout << "количество повторений 6 - " << shet_six << "\n";
-	cout << "количество повторений 7 - " << shet_seven << "\n";
-	cout << "количество повторений 8 - " << shet_eight << "\n";
-	cout << "количество повторений 9 - " << shet_nine << "\n";
-	cout << "количество повторений 10 - " << shet_ten << "\n";
-	cout << "количество повторений 11 - " << shet_eleven << "\n";
-	cout << "количество повторений 12 - " << shet_twelve << "\n";
-	cout << "количество повторений 13 - " << shet_thirteen << "\n";
-	cout << "количество повторений 14 - " << shet_fourteen << "\n";
-	cout << "количество повторений 15 - " << shet_fifteen << "\n";
-	cout << "количество повторений 16 - " << shet_sixteen << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 1 - " << shet_one << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 2 - " << shet_two << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 3 - " << shet_three << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 4 - " << shet_four << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 5 - " << shet_five << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 6 - " << shet_six << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 7 - " << shet_seven << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 8 - " << shet_eight << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 9 - " << shet_nine << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 10 - " << shet_ten << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 11 - " << shet_eleven << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 12 - " << shet_twelve << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 13 - " << shet_thirteen << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 14 - " << shet_fourteen << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 15 - " << shet_fifteen << "\n";
+	cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ 16 - " << shet_sixteen << "\n";
+#endif
+
+#ifdef repeats_4loop
+
+	const int Rows = 3;
+	const int Cols = 4;
+	int array[Rows][Cols];
+	int pustota[Rows*Cols];
+	int index = 0;
+	int Cnt = 0;
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			array[i][j] = rand() % 10;
+		}
+	}
+	cout << "Р’С‹РІРѕРґ РґРІРѕР№РЅРѕРіРѕ РјР°СЃСЃРёРІР°: " << "\n";
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			cout << array[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			int met_before = false;
+			{
+				for (int k = 0; k < i; k++)
+				{
+					for (int l = 0; l < j; l++)
+					{
+						if (array[i][j] == array[k][l])
+						{
+							met_before = true;
+							break;
+						}
+					}
+				}
+			}
+			if (met_before)continue;
+
+			for (int m = 0; m < Rows*Cols; m++)
+			{
+				if (array[i][j] == pustota[m])
+				{
+					Cnt = 1;
+				}
+			}
+			if (Cnt == 0)
+			{
+				pustota[index] = array[i][j];
+				index++;
+			}
+
+			int repeats = 0;
+			for (int k = 0; k < Rows; k++)
+			{
+				for (int l = 0; l < Cols; l++)
+				{
+					
+					if (array[i][j] == array[k][l])
+					{
+						repeats++;
+					}
+					
+				}
+			}
+			if (repeats > 1 && Cnt == 0)
+			{
+				cout << "Р—РЅР°С‡РµРЅРёРµ " << array[i][j] << " РџРѕРІС‚РѕСЂСЏРµС‚СЃСЏ " << repeats << " СЂР°Р·\n";
+				
+			}
+			Cnt = 0;
+		}
+	}
+	
+		
 #endif
 }

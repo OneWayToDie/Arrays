@@ -16,7 +16,7 @@ using namespace std;
 //#define TwoD_Arrays_sortirovka_random
 //#define TwoD_Arrays_sortirovka_dannie_polzovatelya
 //#define unique_2
-#define repeats_TwoD
+//#define repeats_TwoD
 
 void main()
 {
@@ -82,7 +82,8 @@ void main()
 			delenie = number % 16;
 			number = number / system;
 
-			if (delenie != 10 && delenie != 11 && delenie != 12 && delenie != 13 && delenie != 14 && delenie != 15)
+			//if (delenie != 10 && delenie != 11 && delenie != 12 && delenie != 13 && delenie != 14 && delenie != 15)
+			if (delenie < 10)
 			{
 				stroka = stroka + to_string(delenie);
 			}
@@ -440,9 +441,9 @@ void main()
 			index_massiva++;
 		}
 	}
-	for (int i = 0; i < Rows * Cols; i++) // счётчик i выбирает элемент, в который нужно поместить
+	for (int i = 0; i < Rows * Cols; i++) 
 	{
-		for (int j = i + 1; j < Rows * Cols; j++) // счётчик j перебирает элементы в поисках минимального значения
+		for (int j = i + 1; j < Rows * Cols; j++) 
 		{
 			if (perevod[j] < perevod[i])
 			{
