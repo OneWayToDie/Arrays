@@ -193,7 +193,7 @@ void main()
 	int array[Rows][Cols];
 	int pustota[Rows*Cols];
 	int index = 0;
-	int Cnt = 0;
+	int proverka = 0;
 	for (int i = 0; i < Rows; i++)
 	{
 		for (int j = 0; j < Cols; j++)
@@ -236,10 +236,10 @@ void main()
 			{
 				if (array[i][j] == pustota[m])
 				{
-					Cnt = 1;
+					proverka = 1;
 				}
 			}
-			if (Cnt == 0)
+			if (proverka == 0)
 			{
 				pustota[index] = array[i][j];
 				index++;
@@ -258,12 +258,12 @@ void main()
 					
 				}
 			}
-			if (repeats > 1 && Cnt == 0)
+			if (repeats > 1 && proverka == 0)
 			{
 				cout << "Значение " << array[i][j] << " Повторяется " << repeats << " раз\n";
 				
 			}
-			Cnt = 0;
+			proverka = 0;
 		}
 	}
 	
