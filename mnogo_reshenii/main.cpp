@@ -10,7 +10,7 @@ using namespace std;
 //#define repeats_One_Arrays
 //#define sortirovka
 //#define unique_2
-#define repeats_2
+//#define repeats_2
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -163,7 +163,7 @@ void main()
 		{
 			for (int k = i; k < Rows; k++)
 			{
-				for (int l = k > i ? j+1 : 0; l < Cols; l++)
+				for (int l = k == i ? j+1 : 0; l < Cols; l++)		/*k > i ? j+1 : 0*/
 				{
 					//arr[i][j] - выбранный элемент
 					//arr[k][l] - перебираемый элемент
